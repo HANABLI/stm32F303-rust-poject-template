@@ -86,7 +86,7 @@ unsafe extern "C" {
     static mut _sdata: u32; /* Start of .data section in RAM */
     static mut _edata: u32; /* end of .data section in RAM */
     static mut _sbss: u32; /* Start of .bss in RAM */
-    static mut _ebss: u32; /* End of .bss in RAM */ 
+    static mut _ebss: u32; /* End of .bss in RAM */
 }
 
 // 1. Define the vector table for mcu
@@ -196,19 +196,13 @@ static VECTOR_TABLE: [Option<unsafe extern "C" fn()>; 100] = [
 ];
 
 #[unsafe(no_mangle)]
-extern "C" fn hard_fault_handler() {
-    
-}
+extern "C" fn hard_fault_handler() {}
 
 #[unsafe(no_mangle)]
-extern "C" fn nmi_handler() {
-
-}
+extern "C" fn nmi_handler() {}
 
 #[unsafe(no_mangle)]
-extern "C" fn default_handler() {
-
-}
+extern "C" fn default_handler() {}
 
 // 2. Define the reset handler
 #[unsafe(no_mangle)]
